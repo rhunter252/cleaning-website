@@ -84,7 +84,8 @@ const Footer = () => {
         {/* Footer Bottom Section */}
         <div className="border-t border-gray-700 pt-6 mt-6">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Cleaning Co. All rights reserved.
+            © {new Date().getFullYear()} Kingdom Care Cleaning. All rights
+            reserved.
           </p>
         </div>
       </div>

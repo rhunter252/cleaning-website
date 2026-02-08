@@ -1,8 +1,8 @@
 import Contact from "./Components/Contact";
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
-import Section1 from "./Components/Section1";
-import Section2 from "./Components/Section2";
+import About from "./Components/About";
+import Services from "./Components/Services";
 import Footer from "./Components/Footer";
 
 function App() {
@@ -10,12 +10,9 @@ function App() {
     <>
       <Header />
       <Hero />
-      <Section1 />
-      <div className="bg-slate-200">
-        <Section2 />
-      </div>
+      <About />
+      <Services />
       <Contact />
-      <Footer />
     </>
   );
 }

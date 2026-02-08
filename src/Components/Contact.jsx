@@ -1,12 +1,14 @@
+import { Mail } from "lucide-react";
+
 const Contact = () => {
   return (
-    <section className="py-16">
+    <section id="contact" className="scroll-mt-24 py-16">
       <div className="container mx-auto grid md:grid-cols-2 gap-12 px-6">
         {/* Contact Form */}
         <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold text-gray-800">Get in Touch</h2>
           <p className="mt-2 text-gray-600">
-            We'd love to hear from you! Fill out the form below.
+            Call or text to request a walkthrough or cleaning quote.
           </p>
 
           <form className="mt-6 space-y-4">
@@ -44,10 +46,10 @@ const Contact = () => {
         <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold text-gray-800">Our Schedule</h2>
           <p className="mt-2 text-gray-600">
-            Check our availability and book your cleaning session.
+            Operating Hours By appointment and contract schedule.
           </p>
 
-          <ul className="mt-6 space-y-4 text-gray-700">
+          {/* <ul className="mt-6 space-y-4 text-gray-700">
             <li className="flex justify-between border-b pb-2">
               <span>Monday - Friday</span>
               <span className="font-semibold">8:00 AM - 6:00 PM</span>
@@ -60,12 +62,15 @@ const Contact = () => {
               <span>Sunday</span>
               <span className="font-semibold text-red-600">Closed</span>
             </li>
-          </ul>
+          </ul> */}
 
           <div className="mt-6">
             <h3 className="text-lg font-semibold text-gray-800">Contact Us</h3>
-            <p className="text-gray-600 mt-1">📞 (336) 456-7890</p>
-            <p className="text-gray-600">📍 123 Fleming St., Greensboro, NC</p>
+            <p className="text-gray-600 mt-1">📞 (336) 404-2548</p>
+            <p className="mt-1 flex items-center gap-2 text-gray-600">
+              <Mail size={24} className="text-red-700" />
+              <span>kingdomcarecleaningllc@gmail.com</span>
+            </p>
           </div>
         </div>
       </div>
