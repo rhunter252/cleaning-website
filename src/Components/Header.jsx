@@ -3,71 +3,81 @@ import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navItems = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Services", href: "#services" },
+  ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-md">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2 text-lg font-semibold tracking-[0.2em]">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-emerald-500 text-white text-sm font-bold shadow-lg">
-            KC
+    <header className="sticky top-0 z-50 border-b border-amber-200/30 bg-gradient-to-r from-stone-950 via-stone-900 to-stone-950 text-stone-100 backdrop-blur">
+      <div className="container mx-auto flex items-center justify-between px-4 py-1 sm:px-6">
+        <a href="#home" className="group flex items-center gap-3">
+          <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl ">
+            <img
+              src="./kccleaning.jpg"
+              alt="Kingdom Care Cleaning logo"
+              className="h-20 w-20 object-contain"
+            />
           </span>
-          <span className="hidden sm:inline">KINGDOM CARE CLEANING</span>
+          <span className="leading-tight">
+            <span className="block text-sm font-semibold tracking-[0.16em] text-amber-100">
+              KINGDOM CARE
+            </span>
+            <span className="block text-[11px] tracking-[0.24em] text-amber-300/80">
+              CLEANING
+            </span>
+          </span>
         </a>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <a href="#home" className="text-gray-700 hover:text-gray-900 transition-colors">
-            Home
-          </a>
-          <a href="#about" className="text-gray-700 hover:text-gray-900 transition-colors">
-            About
-          </a>
-          <a href="#services" className="text-gray-700 hover:text-gray-900 transition-colors">
-            Services
-          </a>
 
+        <nav className="hidden items-center gap-2 rounded-full border border-amber-200/30 bg-stone-900/70 p-1 shadow-[0_8px_30px_rgba(0,0,0,0.35)] md:flex">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="rounded-full px-4 py-2 text-sm font-medium text-stone-200 transition hover:bg-amber-200/15 hover:text-amber-100"
+            >
+              {item.label}
+            </a>
+          ))}
           <a
             href="#contact"
-            className="inline-flex items-center rounded-full bg-gray-900 px-5 py-2.5 text-white shadow-sm transition hover:shadow-md hover:-translate-y-0.5"
+            className="rounded-full bg-amber-300 px-5 py-2 text-sm font-semibold text-stone-900 transition hover:bg-amber-200"
           >
             Contact
           </a>
         </nav>
-        {/* Mobile Menu Button */}
+
         <button
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 text-gray-900 shadow-sm transition hover:shadow-md"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-amber-200/30 bg-stone-900/80 text-amber-100 shadow-sm transition hover:bg-stone-800 md:hidden"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-black/10 bg-white/95 backdrop-blur">
-          <a
-            href="#home"
-            className="block px-6 py-3 text-gray-800 hover:bg-black/5 transition-colors"
-          >
-            Home
-          </a>
-          <a
-            href="#services"
-            className="block px-6 py-3 text-gray-800 hover:bg-black/5 transition-colors"
-          >
-            Services
-          </a>
-          <a
-            href="#about"
-            className="block px-6 py-3 text-gray-800 hover:bg-black/5 transition-colors"
-          >
-            About
-          </a>
-          <a
-            href="#contact"
-            className="block px-6 py-3 text-gray-800 hover:bg-black/5 transition-colors"
-          >
-            Contact
-          </a>
+        <div className="border-t border-amber-200/20 bg-stone-950/95 px-4 pb-4 md:hidden sm:px-6">
+          <div className="mt-3 space-y-1 rounded-2xl border border-amber-200/20 bg-stone-900/90 p-2 shadow-[0_8px_30px_rgba(0,0,0,0.4)]">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="block rounded-xl px-4 py-3 text-sm font-medium text-stone-100 transition hover:bg-amber-200/15 hover:text-amber-100"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              className="mt-2 block rounded-xl bg-amber-300 px-4 py-3 text-center text-sm font-semibold text-stone-900 transition hover:bg-amber-200"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </a>
+          </div>
         </div>
       )}
     </header>
