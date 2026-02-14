@@ -50,7 +50,7 @@ const Section2 = () => {
           <div className="relative">
             <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-indigo-200/60 to-emerald-200/60 blur-xl"></div>
             <img
-              src="https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src="https://images.unsplash.com/photo-1669101602108-fa5ba89507ee?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Cleaning Service"
               className="relative w-full rounded-3xl border border-white/60 shadow-2xl"
             />
