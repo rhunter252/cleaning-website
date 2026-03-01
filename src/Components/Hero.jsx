@@ -4,12 +4,17 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative scroll-mt-24 overflow-hidden bg-[url('/office-hero2.jpg')] bg-cover bg-center bg-no-repeat"
+      className="relative scroll-mt-24 overflow-hidden min-h-[72svh] sm:min-h-[78svh] md:min-h-[82svh]"
     >
+      <img
+        src="/office-hero2.jpg"
+        alt="Clean and professional office interior"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-white/10"></div>
       <div className="absolute -top-24 right-0 h-64 w-64 rounded-full bg-emerald-400/25 blur-3xl"></div>
       <div className="absolute -bottom-24 left-10 h-72 w-72 rounded-full bg-indigo-500/25 blur-3xl"></div>
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-start text-left text-white px-6 py-24 md:py-32">
+      <div className="relative z-10 mx-auto flex min-h-[72svh] max-w-5xl flex-col items-start justify-center px-6 py-24 text-left text-white sm:min-h-[78svh] md:min-h-[82svh] md:py-32">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
